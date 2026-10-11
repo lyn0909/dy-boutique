@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&Y Boutique</title>
+
+    <style>
+        body {
+            background-color: white;
+            color: #222222;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        /* ENCABEZADO DE LA TIENDA */
+
+        header {
+            background-color: #111111;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin: 15px;
+        }
+
+        .logo {
+            font-size: 60px;
+            margin: 5px;
+            letter-spacing: 2px;
+        }
+
+        .boutique {
+            font-size: 30px;
+            font-weight: normal;
+            letter-spacing: 10px;
+            margin-top: 15px;
+            margin-bottom: 35px;
+        }
+
+        hr {
+            border: 1px solid #888888;
+            margin: 25px 15px;
+        }
+
+        .frase {
+            font-size: 25px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        /* MENU */
+
+        nav {
+            background-color: #eeeeee;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 12px;
+            font-weight: bold;
+        }
+
+        /* BIENVENIDA */
+
+        .bienvenida {
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        /* CARRUSEL */
+
+        .carrusel {
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 25px 15px;
+            margin: 15px;
+        }
+
+        .carrusel img {
+            width: 280px;
+            max-width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #444444;
+        }
+
+        /* TARJETAS DE PRODUCTOS */
+
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #dddddd;
+            width: 220px;
+            padding: 15px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .precio {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* INFORMACION Y CARRITO */
+
+        .informacion {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        /* AJUSTES PARA CELULARES */
+
+        @media (max-width: 600px) {
+            header {
+                margin: 8px;
+                padding: 25px 10px;
+            }
+
+            .logo {
+                font-size: 45px;
+            }
+
+            .boutique {
+                font-size: 22px;
+                letter-spacing: 6px;
+            }
+
+            .frase {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .productos {
+                padding: 10px;
+                gap: 12px;
+            }
+
+            .card {
+                width: 45%;
+                padding: 8px;
+            }
+
+            .card img {
+                height: 150px;
+            }
+
+            .card h3 {
+                font-size: 16px;
+            }
+
+            .card p {
+                font-size: 13px;
+            }
+
+            .precio {
+                font-size: 17px;
+            }
+
+            button {
+                padding: 10px;
+                max-width: 100%;
+            }
+
+            .carrusel img {
+                height: 220px;
+            }
+        }
+        .logo-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+    
+    <img src="imageness/logo.png"
+         alt="Logo D&Y Boutique"
+         class="logo-img">
+</header>
+
+
+    <!-- MENU -->
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+    </nav>
+
+    <!-- BIENVENIDA -->
+
+    <div class="bienvenida" id="inicio">
+        <h2>Tu belleza, tu estilo</h2>
+        <p>
+            Descubre productos para resaltar lo mejor de ti.
+        </p>
+    </div>
+
+    <!-- CARRUSEL -->
+
+    <div class="carrusel">
+        <h2>PRODUCTOS DESTACADOS</h2>
+
+        <img id="imagenCarrusel"
+        src="imageness/labial1.jpg"
+        alt="Labial">
+
+        <h3 id="nombreCarrusel">Labial</h3>
+
+        <button onclick="anterior()">❮ Anterior</button>
+        <button onclick="siguiente()">Siguiente ❯</button>
+    </div>
+
+    <!-- PRODUCTOS -->
+
+    <h2 id="productos" style="text-align:center">
+        NUESTRA COLECCIÓN
+    </h2>
+
+    <div class="productos">
+
+        <div class="card">
+            <img
+            src="imageness/labial1.jpg"
+            alt="Labial">
+
+            <h3>Labial</h3>
+            <p>Color y estilo para tus labios.</p>
+            <p class="precio">$180</p>
+
+            <button onclick="agregar('Labial', 180)">
+                Agregar
+            </button>
+        </div>
+
+        <div class="card">
+            <img
+            src="imageness/maquillaje1.jpg"
+            alt="Maquillaje">
+
+            <h3>Set de maquillaje</h3>
+            <p>Todo para crear tu look favorito.</p>
+            <p class="precio">$350</p>
+
+            <button onclick="agregar('Set de maquillaje', 350)">
+                Agregar
+            </button>
+        </div>
+
+        <div class="card">
+            <img
+            src="imageness/perfume1.jpg"
+            alt="Perfume">
+
+            <h3>Perfume</h3>
+            <p>Una fragancia para cada ocasión.</p>
+            <p class="precio">$420</p>
+
+            <button onclick="agregar('Perfume', 420)">
+                Agregar
+            </button>
+        </div>
+
+        <div class="card">
+            <img
+            src="imageness/crema1.jpg"
+            alt="Crema facial">
+
+            <h3>Crema facial</h3>
+            <p>Cuida tu piel todos los días.</p>
+            <p class="precio">$250</p>
+
+            <button onclick="agregar('Crema facial', 250)">
+                Agregar
+            </button>
+        </div>
+
+        <div class="card">
+            <img
+            src="imageness/skincare1.jpg"
+            alt="Producto de skincare">
+
+            <h3>Skincare</h3>
+            <p>Un momento especial para tu piel.</p>
+            <p class="precio">$300</p>
+
+            <button onclick="agregar('Skincare', 300)">
+                Agregar
+            </button>
+        </div>
+
+    </div>
+
+    <!-- SOBRE NOSOTROS -->
+
+    <div class="informacion" id="nosotros">
+        <h2>Sobre D&Y Boutique</h2>
+
+        <p>
+            Somos una tienda dedicada a la belleza,
+            el maquillaje y el cuidado personal.
+        </p>
+
+        <p>
+            Encuentra tus productos favoritos en un solo lugar.
+        </p>
+    </div>
+
+    <!-- CARRITO DE COMPRAS -->
+
+    <div class="informacion">
+        <h2>MI CARRITO</h2>
+
+        <p id="carrito">
+            Tu carrito está vacío.
+        </p>
+
+        <p id="total">Total: $0</p>
+
+        <button onclick="vaciarCarrito()">
+            Vaciar carrito
+        </button>
+    </div>
+
+    <!-- PIE DE PAGINA -->
+
+    <footer>
+        <h3>D&Y BOUTIQUE</h3>
+        <p>BEAUTY IS FOR EVERYONE</p>
+        <p>Gracias por visitarnos.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+        var numero = 0;
+
+        var imagenes = [
+            "imageness/labial1.jpg",
+            "imageness/maquillaje1.jpg",
+            "imageness/perfume1.jpg",
+            "imageness/crema1.jpg",
+            "imageness/skincare1.jpg"
+        ];
+
+        var nombres = [
+            "Labial",
+            "Set de maquillaje",
+            "Perfume",
+            "Crema facial",
+            "Skincare"
+        ];
+
+        function siguiente() {
+            numero = numero + 1;
+
+            if (numero >= imagenes.length) {
+                numero = 0;
+            }
+
+            document.getElementById("imagenCarrusel").src =
+                imagenes[numero];
+
+            document.getElementById("nombreCarrusel").innerHTML =
+                nombres[numero];
+        }
+
+        function anterior() {
+            numero = numero - 1;
+
+            if (numero < 0) {
+                numero = imagenes.length - 1;
+            }
+
+            document.getElementById("imagenCarrusel").src =
+                imagenes[numero];
+
+            document.getElementById("nombreCarrusel").innerHTML =
+                nombres[numero];
+        }
+
+        var carrito = [];
+        var total = 0;
+
+        function agregar(nombre, precio) {
+            carrito.push(nombre);
+            total = total + precio;
+
+            document.getElementById("carrito").innerHTML =
+                carrito.join(", ");
+
+            document.getElementById("total").innerHTML =
+                "Total: $" + total;
+        }
+
+        function vaciarCarrito() {
+            carrito = [];
+            total = 0;
+
+            document.getElementById("carrito").innerHTML =
+                "Tu carrito está vacío.";
+
+            document.getElementById("total").innerHTML =
+                "Total: $0";
+        }
+
+    </script>
+
+</body>
+</html>
